@@ -25,8 +25,8 @@ File specification: Llogin site where user should login
         
             // if the user is already logged in, so it will be sent to t home page
             if ($valid_session) {
-                // Go back to the home.php page
-                header('location: home.php');
+                // Go back to the index.php page
+                header('location: index.php');
                 // close the database and exit of the site
                 $db->close();
                 exit;
@@ -38,8 +38,8 @@ File specification: Llogin site where user should login
                 $valid_login = require('check_login.php');
                 
                 if($valid_login) {
-                    // Go back to the home.php page
-                    header('location: home.php');
+                    // Go back to the index.php page
+                    header('location: index.php');
                     // close the database and exit of the site
                     $db->close();
                     exit;

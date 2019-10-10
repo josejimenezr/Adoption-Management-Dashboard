@@ -29,8 +29,8 @@ File specification: Website that allows to add new animal in the Adoption databa
         
             // check if the user is not logged in, it is returned to the home page
             if (!($valid_session)) {
-                // Go back to the home.php page
-                header('location: home.php');
+                // Go back to the index.php page
+                header('location: index.php');
                 // close the database and exit of the site
                 $db->close();
                 exit;
@@ -44,8 +44,8 @@ File specification: Website that allows to add new animal in the Adoption databa
                 // Check if the Cancel button has been pressed
 				if ($submit == "Cancel") {
                     
-                    // Go back to the home.php page
-					header('location: home.php');
+                    // Go back to the index.php page
+					header('location: index.php');
                     // close the database and exit of the site
 					$db->close();
 					exit;
@@ -71,13 +71,13 @@ File specification: Website that allows to add new animal in the Adoption databa
 
                     // Check if new data has been added into the database
                     if ($stmt->affected_rows > 0) {
-                        echo "Successfully Added Animal<br><a href=\"home.php\">Back to Adoption Management Dashboard</a><br><hr>";
+                        echo "Successfully Added Animal<br><a href=\"index.php\">Back to Adoption Management Dashboard</a><br><hr>";
                         $stmt->close();
                         $db->close();
                         exit;
                     }
                     else {
-                        echo "Failed to add animal<br><a href=\"home.php\">Back to Adoption Management Dashboard</a><br><hr>";
+                        echo "Failed to add animal<br><a href=\"index.php\">Back to Adoption Management Dashboard</a><br><hr>";
                         $stmt->close();
                         $db->close();
                         exit;
@@ -86,7 +86,7 @@ File specification: Website that allows to add new animal in the Adoption databa
                 }
                 // It is not added new data if the values do not have the correct type
                 else {
-                    echo "Failed to add animal<br><a href=\"add.php\">Back to Add Animal</a><br><a href=\"home.php\">Back to Adoption Management Dashboard</a><br><hr>";
+                    echo "Failed to add animal<br><a href=\"add.php\">Back to Add Animal</a><br><a href=\"index.php\">Back to Adoption Management Dashboard</a><br><hr>";
                     $db->close();
                     exit;
                 }

@@ -28,8 +28,8 @@ File specification: Website that delete a record of the database
         
             // check if the user is not logged in, it is returned to the home page
             if (!($valid_session)) {
-                // Go back to the home.php page
-                header('location: home.php');
+                // Go back to the index.php page
+                header('location: index.php');
                 // close the database and exit of the site
                 $db->close();
                 exit;
@@ -46,15 +46,15 @@ File specification: Website that delete a record of the database
                 // Error message if it was not get any animalid
 				if (empty($animalid) || !is_numeric($animalid)) {
 					echo "It has been presented an error.  Please go back and try again.";
-                    echo "<br><a href=\"home.php\">Return to all Animals</a><br><br>";
+                    echo "<br><a href=\"index.php\">Return to all Animals</a><br><br>";
 					$db->close();
 					exit;
 				}		
 			}
             // if delete.php page is open without any input
             else {
-                // Go back to the home.php page
-                header('location: home.php');
+                // Go back to the index.php page
+                header('location: index.php');
                 // close the database and exit of the site
                 $db->close();
                 exit;
@@ -66,9 +66,9 @@ File specification: Website that delete a record of the database
                 
                 $submit = $_POST['submit'];
                 
-                // Case that Cancel button is pressed and go back to the home.php site
+                // Case that Cancel button is pressed and go back to the index.php site
                 if ($submit == "Cancel"){
-					header('location: home.php');
+					header('location: index.php');
 					$db->close();
 					exit;
 				}
@@ -83,14 +83,14 @@ File specification: Website that delete a record of the database
 
                 // Case that the deletion was successful
                 if ($stmt->affected_rows > 0) {
-                    echo "Successful Deletion<br><a href=\"home.php\">Back to Animal Adoption Dashboard</a><br><hr>";
+                    echo "Successful Deletion<br><a href=\"index.php\">Back to Animal Adoption Dashboard</a><br><hr>";
                     $stmt->close();
                     $db->close();
                     exit;
                 }
                 // If the deletion was failed
                 else {
-                    echo "Failed to delete<br><a href=\"home.php\"Back to Animal Adoption Dashboard</a><br><hr>";
+                    echo "Failed to delete<br><a href=\"index.php\"Back to Animal Adoption Dashboard</a><br><hr>";
                     $db->close();
                     $stmt->close();
                     exit;

@@ -4,7 +4,7 @@ Student ID:         12045670
 Assessment:         2
 Unit Coordinator:   Lily Li
 Lecture:            Partha Gangavalli
-File name:          home.php
+File name:          index.php
 File specification: Home page with all the registers on the database
 -->
 <html>

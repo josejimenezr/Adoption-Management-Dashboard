@@ -10,7 +10,7 @@ File specification: Footer is the user is not logged in
 <?php
     
     echo "<br><hr>";
-	echo '<a href="home.php">Home</a> | ';
+	echo '<a href="index.php">Home</a> | ';
 	echo '<a href="login.php">Login</a> ';
 
 ?>

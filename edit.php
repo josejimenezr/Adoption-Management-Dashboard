@@ -28,8 +28,8 @@ File specification: Website that edit the record
         
             // check if the user is not logged in, it is returned to the home page
             if (!($valid_session)) {
-                // Go back to the home.php page
-                header('location: home.php');
+                // Go back to the index.php page
+                header('location: index.php');
                 // close the database and exit of the site
                 $db->close();
                 exit;
@@ -38,24 +38,24 @@ File specification: Website that edit the record
             // Create the animalid variable
 			$animalid;
         
-            // Check if the animalid was provided from the home.php
+            // Check if the animalid was provided from the index.php
 			if (isset($_GET['animalid'])) {
                 
                 //SAve the animalid value
 				$animalid = $_GET['animalid'];
 
-                // Error message if there is not any animalid from home.php
+                // Error message if there is not any animalid from index.php
 				if (empty($animalid) || !is_numeric($animalid)) {
 					echo "It has been presented an error.  Please go back and try again.";
-                    echo "<br><a href=\"home.php\">Back to Animal Managemenet Dashboard</a><br><hr>"; // link to return to the home page
+                    echo "<br><a href=\"index.php\">Back to Animal Managemenet Dashboard</a><br><hr>"; // link to return to the home page
 					$db->close();
 					exit;
 				}
 			}
             // if edit.php page is open without any input
             else {
-                // Go back to the home.php page
-                header('location: home.php');
+                // Go back to the index.php page
+                header('location: index.php');
                 // close the database and exit of the site
                 $db->close();
                 exit;
@@ -69,7 +69,7 @@ File specification: Website that edit the record
                 
                 // check if the button pressed was the cancel button and go back to the home page
 				if ($submit == "Cancel") {
-					header('location: home.php'); // return to the home page if they press cancel button
+					header('location: index.php'); // return to the home page if they press cancel button
 					$db->close();
 					exit;
 				}
@@ -111,7 +111,7 @@ File specification: Website that edit the record
                 // check if the variable is false				
 				if (!$all_input_ok) {
 					echo "<br><a href=\"edit.php?animalid=$animalid\">Return to edit screen</a>";
-					echo "<br><a href=\"home.php\">Return to all animal</a>";
+					echo "<br><a href=\"index.php\">Return to all animal</a>";
 					$db->close();
 					exit;
 				}					
@@ -131,7 +131,7 @@ File specification: Website that edit the record
 
 				// Check if the updating was successful
 				if ($stmt->affected_rows > 0) {
-					echo "Successful Update<br><a href=\"home.php\">Back to Animal Management Dashboard</a><br><hr>";
+					echo "Successful Update<br><a href=\"index.php\">Back to Animal Management Dashboard</a><br><hr>";
 					$stmt->close();
 					$db->close();
 					exit;
@@ -139,7 +139,7 @@ File specification: Website that edit the record
                 
                 // Check if the updating was failed or no value was changed
 				else {
-					echo "Failed to update. Please, change the data to update<br><a href=\"home.php\">Back to Animal Management Dashboard</a><br><hr>";
+					echo "Failed to update. Please, change the data to update<br><a href=\"index.php\">Back to Animal Management Dashboard</a><br><hr>";
 					$stmt->close();
 					$db->close();
 					exit;

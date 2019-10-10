@@ -22,8 +22,8 @@ File specification: Log out site after the user press the logout button
         $valid_session = require('check_session.php');
     
         if (!($valid_session)) {
-            // Go back to the home.php page
-            header('location: home.php');
+            // Go back to the index.php page
+            header('location: index.php');
             // close the database and exit of the site
             $db->close();
             exit;

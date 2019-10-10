@@ -9,7 +9,7 @@ File specification: Footer is the user is logging in the site
 -->
 <?php
     echo "<br><hr>";
-	echo '<a href="home.php">Home</a> | ';
+	echo '<a href="index.php">Home</a> | ';
     echo '<a href="add.php">Add New Animal</a> | ';
 	echo '<a href="logout.php">Log Out</a> ';
 ?>

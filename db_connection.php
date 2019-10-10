@@ -9,10 +9,10 @@ File specification: Connect the adoption database
 -->
 <?php
     // Predifine attributes to login into the database
-	$db_address = 'localhost';
-	$db_user = 'webauth';
-	$db_pass = 'webauth';
-	$db_name = 'adoption';     // database name
+	$db_address = 'DB_ADDRESS';
+	$db_user = 'DB_USERNAME';
+	$db_pass = 'DB_PASSWORD';
+	$db_name = 'DB_NAME';     // database name
 
     // create new variable $db that is the database connection
 	$db = new mysqli($db_address, $db_user, $db_pass, $db_name);
